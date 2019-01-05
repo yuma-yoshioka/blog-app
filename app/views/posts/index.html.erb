@@ -1,0 +1,26 @@
+	<div class="main-contents">
+		<div class="col s12 m7">
+			<% @posts.each do |post| %>	
+	    <div class="card horizontal">
+	      <div class="post-stacked">
+	        <div class="post-content">
+	          	<p><%= simple_format(post.text) %></p>
+	        </div>
+	        <div class="card-action">
+	        	<ul class="postoparation-bar row">
+	        		<li class="col s1">
+	        			show
+							</li>
+	        		<li class="col s1">
+	        			edit
+	        		</li>
+	        		<li class="col s1">
+	        			distroy
+	        		</li>
+	      		</ul>               
+	        </div>
+	      </div>
+	    </div>
+	   <% end %>
+  	</div>
+	</div>
