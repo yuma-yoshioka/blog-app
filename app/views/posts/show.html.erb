@@ -1,0 +1,23 @@
+<div class="main-contents">
+		<div class="col s12 m7">
+	    <div class="card horizontal">
+	      <div class="post-stacked">
+	        <div class="post-content">
+	          	<p><%= simple_format(@post.text) %></p>
+	        </div>
+	        <div class="card-action">
+						<ul class="postoparation-bar row">
+								<% if user_signed_in? && current_user.id == @post.user_id %>
+	        		<li class="col s1">
+	        			<%= link_to 'edit', "/posts/#{@post.id}/edit", method: :get %>
+	        		</li>
+	        		<li class="col s1">
+	        			<%= link_to 'distroy', "/posts/#{@post.id}",method: :delete%>
+	        		</li>
+	        			<% end %>
+	      		</ul>     
+	        </div>
+	      </div>
+	    </div>
+  	</div>
+	</div>
