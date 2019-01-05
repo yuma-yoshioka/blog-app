@@ -27,11 +27,21 @@
 		    <div class="nav-wrapper">
 		    	<%= link_to 'BLOG', "/posts",class: "brand-logo center",method: :get %>
 		      <ul class="oparation-bar">
-		        <li><a href="sass.html">sign-in</a></li>
-		        <li><a href="badges.html">sign-out</a></li>
-		        <li class="new-post">
-		        	<%= link_to 'New', "/posts/new",method: :get %>
-		        </li>
+		      	<% if user_signed_in? %>
+		      		<li class="sign-out">
+		      			<%= link_to "サインアウト", destroy_user_session_path, method: :delete %>
+		      		</li>
+			        <li class="new-post">
+			        	<%= link_to '投稿する', "/posts/new",method: :get %>
+			        </li>
+			      <% else %>  
+		        	<li class="sign-in">	
+		        		<%= link_to "サインイン", new_user_session_path, class: 'post' %>
+          		</li>
+          		<li class="new-user">
+          			<%= link_to "新規登録", new_user_registration_path, class: 'post' %>
+		        	</li>
+		        <% end %>
 		      </ul>
 		    </div>
 		  </nav>
