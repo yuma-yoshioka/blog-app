@@ -1,0 +1,11 @@
+<div class="new-post">
+	<div class="row">
+    <div class="input-field col s12">
+    	<%= form_tag('/posts', method: :post) do %>
+      <textarea placeholder="text" class="materialize-textarea" name="text" ></textarea>
+      <label for="textarea1" ></label>
+			<input type="submit" value="投稿" class="btn col s12 waves-effect waves-light ">
+			<% end %>
+		</div>
+  </div>	          
+</div>
