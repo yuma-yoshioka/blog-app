@@ -7,20 +7,23 @@
 	          	<p><%= simple_format(post.text) %></p>
 	        </div>
 	        <div class="card-action">
-	        	<ul class="postoparation-bar row">
+						<ul class="postoparation-bar row">
 	        		<li class="col s1">
-	        			show
+								<%= link_to 'show',"/posts/#{post.id}", method: :get %>
 							</li>
+								<% if user_signed_in? && current_user.id == post.user_id %>
+
 	        		<li class="col s1">
-	        			edit
+	        			<%= link_to 'edit', "/posts/#{post.id}/edit", method: :get %>
 	        		</li>
 	        		<li class="col s1">
-	        			distroy
+	        			<%= link_to 'distroy', "/posts/#{post.id}",method: :delete%>
+	        			<% end %>
 	        		</li>
-	      		</ul>               
+	      		</ul>     
 	        </div>
 	      </div>
 	    </div>
-	   <% end %>
+	   	<% end %>
   	</div>
 	</div>
