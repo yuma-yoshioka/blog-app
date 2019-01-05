@@ -1,0 +1,13 @@
+<div class="new-post">
+  <div class="row col s12">
+  	<%= form_tag("/posts/#{@post.id}", method: :patch ) do %>
+      <div class="row input-field col s12">
+        <textarea id="textarea1" class="materialize-textarea "><%= @post.text %></textarea>
+        <label for="textarea1" ></label>
+      </div>
+		  	<div class="row col s12">
+					<input type="submit" class="waves-effect waves-light btn " value="更新">
+				</div>
+		 <% end %>
+  </div>
+</div>
